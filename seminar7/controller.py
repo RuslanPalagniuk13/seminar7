@@ -3,6 +3,8 @@ from export_data import export_data
 from print_data import print_data
 from search_data import search_data
 from datetime import datetime as dt
+#from time import time
+#from datetime import date
 
 def greeting():
     print("Добро пожаловать в телефонный справочник!")
@@ -17,7 +19,7 @@ def input_data():
     brith_name = input("Введите дату рождения: ")
     phone_number = input("Введите номер контакта: ")
     note = input("Введите категорию контакта: ")
-    today = dt.now().strftime('%m.%d.%Y - %H:%M')
+    today = dt.now().strftime('%m%d/%Y/ - %H:%M')
     return [last_name, first_name, middle_name, brith_name, phone_number, note, today]
 
 def choice_sep():
@@ -44,8 +46,6 @@ def choice_todo():
         data = export_data()
         item = search_data(word, data)
         if item != None:
-            print("Фамилия".center(15), "Имя".center(15), "Отчество".center(15), "Дата рождения".center(15), "Телефон".center(15), "Категория".center(20), "Дата и Время внесения".center(20))
-            print("-"*130)
-            print(item[0].center(15), item[1].center(15), item[2].center(15), item[3].center(15), item[4].center(15), item[5].center(20), item[6].center(20))
+            print_data(data)
         else:
             print("Данные не обнаружены")
