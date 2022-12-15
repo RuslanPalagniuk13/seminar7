@@ -1,5 +1,7 @@
 # модуль экспорта данных 
 
+from datetime import datetime as dt
+
 def export_data():
     with open('phone.csv', 'r', encoding='utf-8') as file:
         data = []
