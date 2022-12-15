@@ -19,9 +19,9 @@ def input_data():
     return [last_name, first_name, middle_name, brith_name, phone_number, note]
 
 def choice_sep():
-    sep = input("Введите разделитель: ")
-    if sep == "":
-        sep = None
+    sep = ", " #input("Введите разделитель: ")
+#    if sep == "":
+#        sep = None
     return sep
 
 def choice_todo():
